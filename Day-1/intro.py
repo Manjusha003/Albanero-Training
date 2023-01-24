@@ -25,6 +25,36 @@
 
 # print(4 * 3.75 - 1)
 
+# complex numbers
+# a=5+7J
+# b=8+7J
+# print(a+b)
+
+# a=80
+# print(a)
+
+# STRINGS
+
+# a='python'  # single quote
+# b="python"  # double quote
+# print(a)
+# print(b)
+
+# print('doesn\'t') # use \' to escape the single quote
+# print("doesn't") # ...or use double quotes instead
+
+
+# print("""\
+# Usage: thingy [OPTIONS]
+#      -h                        
+#      -H hostname               
+# """)
+
+# print('''\
+# Usage: thingy [OPTIONS]
+#      -h                        
+#      -H hostname               
+# ''')
 
 
 # Strings can be concatenated (glued together) with the + operator, and repeated with *:
@@ -35,6 +65,12 @@
 # print(name+lastname) #manjushaRaut
 
 # print('my' 'friends') #myfriends
+
+# if you want to concatenate variables or a variable and a literal, use +:
+# name="manjusha"
+# print(name + "raut")
+
+
 
 # indexing
 # word="python"
@@ -49,6 +85,6 @@
 
 
 #len()
-str="hello"
-print(len(str))
+# str="hello"
+# print(len(str))
 
