@@ -14,6 +14,27 @@
 # else:
 #     print("number is positive")
 
+num=int(input("Enter any Number :"))
+
+if num%2==0:
+     print("number is even")
+else:
+     print("number is odd")
+
+
+# comapair two numbers
+
+first=int(input("Enter first number : "))
+second=int(input("Enter second number : "))
+
+if first<second:
+     print("first number is less than second ")
+elif first>second:
+     print("second is greater than second")
+else:
+     print("fisrt and second are equal")
+
+
 
 #for Statements
 
@@ -26,13 +47,21 @@
 # for i in list:
 #     print(i,end=',')    
 
-
-
 # for i in list[:]:  # Loop over a slice copy of the entire list.
 #      if len(i) >5 :
 #         list.insert(0, i)
 # print(list)
  
+# for loop on string
+
+str="manjusha"
+for i in str:
+    print(i)
+
+str="hello world"
+for i in str:
+     print(i,end="")
+print()
 
 
 # range()
@@ -48,11 +77,10 @@
 #     print(i)
 
 
-# for loop on string
-# str="manjusha"
-# for i in str:
-#     print(i)
-
+for i in range(1,20):
+     if i%2==0:
+          print(i,end=" ")
+print()
 
 
 # a = ['Mary', 'had', 'a', 'little', 'lamb']
@@ -77,6 +105,12 @@
 #    else:
 #       print(n, 'is a prime number')
 
+# pattern 
+for i in range(0,5):
+     for j in range(0,i+1):
+          print("*",end=" ")
+     print("\r")  # ending line after each row
+  
 
 #continue
 # print even and odd numbers
@@ -92,6 +126,7 @@ for num in range(10,20):
          continue
        print(num)
       
+
 
 # pass statement
 

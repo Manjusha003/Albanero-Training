@@ -22,6 +22,27 @@
 # print(fib(20))
 
 
+def sum(a,b):
+    return a+b
+print(sum(2,4))
+
+
+def armstrongNumber(n):
+    num=n
+    sum=0
+    while num>0:
+        rem=num%10
+        sum+=rem**3
+        num=num//10
+    if n==sum:
+        print("number is armstrong")
+    else:
+        print("Number is not armstrong")
+
+armstrongNumber(10)
+
+
+
 #4.7.1. Default Argument Values
 
 # def sum(a,b=8,c="something went wrong"):
@@ -37,14 +58,29 @@
 #         print(c)
 # sum("are you ok?",7)
 
+
+def sum(a,b,c=70,d=90):
+    return a+b+c+d
+
+print(sum(10,20,30))
+
+
 ## varibale
 
-# i=10
-# def fun(arg=i):
-#     print(arg)
+i=10
+def fun(arg=i):
+    print(arg)
 
-# i=20
-# fun() #10
+i=20
+fun(i) #20
+
+
+i=10
+def fun(arg=i):
+    print(arg)
+
+i=20
+fun() #10
 
 
 ## list
@@ -56,8 +92,6 @@
 # print(fun(78)) #[78]
 # print(fun(88)) #[78, 88]
 # print(fun(8))  #[78, 88,8]
-
-
 
 #If you don’t want the default to be shared between subsequent calls, you can write the function like this instead:
 
@@ -71,6 +105,9 @@
 # print(fun(66)) #[66]
 # print(fun(77)) #[77]
 
+
+#Keyword arguments allow us to employ any order, whereas default arguments assist us to deal with the absence of values.
+#positional arguments -> only need to pass the value.
 
 #Keyword Arguments
 
@@ -132,6 +169,10 @@ print(fun("welcome","Same","start","today"))
 # a=list(range(*args)) 
 # print(a) #[2, 3, 4, 5, 6, 7, 8]
 
+# L=(7,9)
+# a=list(range(*L))
+# print(a)
+
 
 # p=list(range(2, 9)) 
 # print(p)     #[2, 3, 4, 5, 6, 7, 8]
@@ -154,6 +195,22 @@ def make_increment(n):
 
 res=make_increment(56)
 print(res(1))
+
+#The expression is executed and the result is returned
+#Lambda functions can take any number of arguments:
+
+a=lambda a:a+30
+print(a(10))
+
+output=lambda a,b:a+(b*b)+a-b
+print(output(70,80))
+
+
+
+def myFun(num):
+    return lambda a:num*a
+f=myFun(8)
+print(f(5))
 
  #Documentation Strings
 

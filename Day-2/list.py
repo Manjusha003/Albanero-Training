@@ -81,9 +81,22 @@
 # print(squares)
 
 
-#num=[1,-2,3,-4,5]
+num=[1,-2,3,-4,5]
 # pw=[i**2 for i in num]
 # print(pw)
+
+res=[]
+for i in num:
+    res.append(i**2)
+print(res)
+
+p=[(x,x**2) for x in num]
+print(p)
+
+res1=[]
+for i in num:
+    res1.append((i,i**2))
+print(res1)
 
 # abs=[abs(i) for i in num]
 # print(abs)
