@@ -11,8 +11,10 @@ print(str(name))
 
 # The str.format() method of strings requires more manual effort. You’ll still use { and } to mark where a variable will be substituted and can provide detailed formatting directives, but you’ll also need to provide the information to be formatted.
 
-
-
+yes_votes = 42_572_654
+no_votes = 43_132_495
+percentage = yes_votes / (yes_votes + no_votes)
+print('{:-2} YES votes  {:2.1%}'.format(yes_votes, percentage))
 
 #The repr() of a string adds string quotes and backslashes:
 print(repr(7438798))
@@ -117,6 +119,47 @@ print('The value of pi is approximately %5.3f.' % math.pi)
 #It is good practice to use the with keyword when dealing with file objects
 #Using with is also much shorter than writing equivalent try-finally blocks:
 
+#It is good practice to use the with keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point. Using with is also much shorter than writing equivalent try-finally blocks:
 
-def fun():
-    print("hello")
+with open('first.txt') as f:
+    data=f.read()
+    print(data)
+
+# If you’re not using the with keyword, then you should call f.close() to close the file and immediately free up any system resources used by it. If you don’t explicitly close a file, Python’s garbage collector will eventually destroy the object and close the open file for you, but the file may stay open for a while. Another risk is that different Python implementations will do this clean-up at different times.
+
+
+
+#Methods of File Objects
+# file1=open("first.txt","r")
+#f.read(size), which reads some quantity of data and returns it as a string (in text mode) or bytes object (in binary mode). size is an optional numeric argument.
+
+# print(file1.read(12)) # return the first 12 char of the first.txt
+
+#f.readline() reads a single line from the file; a newline character (\n) is left at the end of the string, and is only omitted on the last line of the file if the file doesn’t end in a newline
+
+#print(file1.read())
+
+# print(file1.readline()) # read single line
+#if you want to read all the lines of a file in a list you can also use list(f) or f.readlines().
+#print(file1.readlines()) #['Hello\n', 'welcome']
+
+#By looping through the lines of the file, you can read the whole file, line by line
+# for line in file1:
+#     print(line)
+
+# file1.close()
+
+#To write to an existing file, you must add a parameter to the open() function
+# file= open("first.txt","a")
+# file.write("I am happy..!")
+# file.close()
+
+
+# Open the file "first.txt" and overwrite the content:
+# f=open("first.txt",'w')
+# f.write("this is my 4th day in albanero")
+# f.close()
+
+
+# json
+# The standard module called json can take Python data hierarchies, and convert them to string representations; this process is called serializing.
