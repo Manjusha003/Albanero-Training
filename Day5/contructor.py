@@ -6,6 +6,7 @@
 
 
 
+
 class School:
     def __init__(self):  # contructor 
        print("init of School class")
