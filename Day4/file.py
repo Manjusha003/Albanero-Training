@@ -42,3 +42,16 @@ import os
 # print(p)
 
 
+
+
+def check_num():
+    num=int(input("Enter any number :"))
+
+    if num%2==0:
+        print(num, "is even")
+    else:
+        print(num, "is odd")
+
+
+if __name__=='__main__':
+   check_num()
