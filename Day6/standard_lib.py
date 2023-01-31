@@ -9,9 +9,9 @@
 
 #The glob module provides a function for making file lists from directory wildcard searches:
 
-# import glob
-# p=glob.glob('.py')
-# print(p)
+import glob
+p=glob.glob('*.py')
+print(p)
 
 
 # import sys
@@ -79,6 +79,23 @@ print(variance)
 
 
 # dates are easily constructed and formatted
+
+from time import ctime, time,localtime
+epoch=time()  # gives time in the seconds
+print("time module",epoch)
+
+t=ctime(epoch)
+print(t)
+
+print(ctime()) # return current time
+
+local=localtime()
+print(local)
+print(local.tm_hour)
+print(local.tm_min)
+print(local.tm_sec)
+print(local.tm_mday)
+
 from datetime import date
 now = date.today()
 print(now)
@@ -117,3 +134,7 @@ def average(values):
 import doctest
 doctest.testmod()   # automatically validate the embedded tests
 print(average([90,70,20]))
+
+
+
+
