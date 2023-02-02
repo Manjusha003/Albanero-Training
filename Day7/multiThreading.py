@@ -1,5 +1,5 @@
 # Multithredaing
-# we can break down one task into multiple process and again this process break down into into small parts and this parts known as tread.
+# we can break down one task into multiple process and again this process break down  into small parts and this parts known as thread.
 # Multithreading is a system in which multiple threads are created of a process for increasing the computing speed of the system. In multithreading, many threads of a process are executed simultaneously and process creation in multithreading is done according to economical
 
 
@@ -38,95 +38,95 @@
 
 
 
-from time import sleep
-from threading import *
+# from time import sleep
+# from threading import *
 
-class School(Thread):
-    def run(self):
-        for i in range(5):
-            print("Hello")
-            sleep(1)
-
-
-class Student(Thread):
-    def run(self):
-        for i in range(5):
-            print("Hi")
-            sleep(1)
-
-print("Bye1")
-s1 = School()
-s2 = Student()
-s1.start()
-s2.start()
-s1.join()
-s2.join()
-print("Bye2")
+# class School(Thread):
+#     def run(self):
+#         for i in range(5):
+#             print("Hello")
+#             sleep(1)
 
 
+# class Student(Thread):
+#     def run(self):
+#         for i in range(5):
+#             print("Hi")
+#             sleep(1)
+
+# print("Bye1")
+# s1 = School()
+# s2 = Student()
+# s1.start()
+# s2.start()
+# s1.join()
+# s2.join()
+# print("Bye2")
 
 
-import threading
-
-def calc_square(num):
-    print("calculate the squares of the numbers")
-    for i in num:
-        print("square:", i*i)
-        sleep(0.2)
 
 
-def calc_cube(num):
-    print("calculate the cubes of the numbers")
-    for i in num:
-        print("cube:", i*i*i)
-        sleep(0.2)
+# import threading
+# from time import sleep
+# def calc_square(num):
+#     print("calculate the squares of the numbers")
+#     for i in num:
+#         print("square:", i*i)
+#         sleep(0.2)
+
+
+# def calc_cube(num):
+#     print("calculate the cubes of the numbers")
+#     for i in num:
+#         print("cube:", i*i*i)
+#         sleep(0.2)
     
 
-arr=[2,3,4,5,6]
-# calc_cube(arr)
-# calc_square(arr)
+# arr=[2,3,4,5,6]
+# # calc_cube(arr)
+# # calc_square(arr)
 
-t1=threading.Thread(target=calc_square,args=(arr,))
-
-
-t2=threading.Thread(target=calc_cube,args=(arr,))
-print("Current Threads is",str(threading.current_thread()))
-print("Threads count before starting t1 and t2 thread is ",threading.active_count())
-print("Threads",threading.enumerate())
-print("settrace ",threading.settrace(calc_square(arr,)))
-
-t1.start()
-t2.start()
-print("Threads count is ",threading.active_count())
-print("Current Threads is",str(threading.current_thread()))
-print("the netive id is",threading.get_native_id())
-print("Threads",threading.enumerate())
-print("main thread",threading.main_thread())
-print("gettrace method",threading.gettrace())
-
-t1.join()
-t2.join()
-print("Task is Done")
+# t1=threading.Thread(target=calc_square,args=(arr,))
 
 
+# t2=threading.Thread(target=calc_cube,args=(arr,))
+# print("Current Threads is",str(threading.current_thread()))
+# print("Threads count before starting t1 and t2 thread is ",threading.active_count())
+# print("Threads",threading.enumerate())
+# print("settrace ",threading.settrace(calc_square(arr,)))
 
-sum=[]
-def calc_sum(num):
-    global sum
-    s=0
-    print("Sum of the numbers in given range")
-    for i in num:
-      s+=i
-      sum.append(s)
+# t1.start()
+# t2.start()
+# print("Threads count is ",threading.active_count())
+# print("Current Threads is",str(threading.current_thread()))
+# print("the netive id is",threading.get_native_id())
+# print("Threads",threading.enumerate())
+# print("main thread",threading.main_thread())
+# print("gettrace method",threading.gettrace())
+
+# t1.join()
+# t2.join()
+# print("Task is Done")
+
+
+
+# sum=[]
+# def calc_sum(num):
+#     global sum
+#     s=0
+#     print("Sum of the numbers in given range")
+#     for i in num:
+#       s+=i
+#       sum.append(s)
     
 
-if __name__=='__main__':
-   num=[6,3,4,5,4,3]
-   p1=threading.Thread(target=calc_sum,args=(num,))
-   p1.start()
-   p1.join()
+# if __name__=='__main__':
+#    num=[6,3,4,5,4,3]
+#    p1=threading.Thread(target=calc_sum,args=(num,))
+#    p1.start()
+#    p1.join()
 
-print(sum)
+# print(sum)
 
 
 
@@ -144,10 +144,36 @@ print(sum)
 
 
 # Using list or tuple as the args argument which passed to the Thread could achieve the same effect.
-from threading import Thread
-t = Thread(target=print, args=[1,6,7])
-t1 = Thread(target=print, args=(1,6,7))
-t1.run()
-t.run()
+# from threading import Thread
+# t = Thread(target=print, args=[1,6,7])
+# t1 = Thread(target=print, args=(1,6,7))
+# t1.run()
+# t.run()
 
+
+
+
+
+
+# import threading
+# import time
+
+# def worker(num):
+#     print("Thread {} started".format(num))
+#     time.sleep(2)
+#     print("Thread {} finished".format(num))
+
+# threads = []
+# for i in range(5):
+#     t = threading.Thread(target=worker, args=(i,))
+#     threads.append(t)
+#     t.start()
+    
+
+# for t in threads:
+#     t.join()
+
+
+
+import multiprocessing
 

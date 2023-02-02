@@ -37,12 +37,12 @@ print(weakref.getweakrefs(my_list))
 
 
 
-# import weakref
-# class myClass(list):
-#    pass
-# c1=myClass("Manjusha")
-# print(c1)
-# new_weak_list1 = weak_ref()
-# print(new_weak_list1)
-# print(str(weakref.getweakrefcount(c1)))
-# print(str(weakref.getweakrefs(c1)))
+import weakref
+class myClass(list):
+   pass
+c1=myClass("Manjusha")
+print(c1)
+new_weak_list1 = weak_ref()
+print(new_weak_list1)
+print(str(weakref.getweakrefcount(c1)))
+print(weakref.getweakrefs(c1))
